@@ -105,7 +105,7 @@ void j1Render::RealLoad(pugi::xml_node& savedoc) {
 
 	camera.x = savedoc.child("camera").attribute("x").as_int();
 	camera.y = savedoc.child("camera").attribute("y").as_int();
-
+	
 }
 
 // TODO 8: Create a method to save the state

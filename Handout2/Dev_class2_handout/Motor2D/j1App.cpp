@@ -151,6 +151,8 @@ void j1App::PrepareUpdate()
 // ---------------------------------------------
 void j1App::FinishUpdate()
 {
+	pugi::xml_parse_result result = save_file.load_file("savegame.xml");
+	saving = save_file.child("save");
 	// TODO 1: This is a good place to call load / Save functions
 	if (press_load == true) {
 		p2List_item<j1Module*>* item;
@@ -314,11 +316,12 @@ void j1App::RealLoad() {
 	LOG("Loading...");
 	p2List_item<j1Module*>* item;
 	item = modules.start;
+	pugi::xml_parse_result result = save_file.load_file("savegame.xml");
 
 	while (item != NULL)
 	{
 		if (saving.child(item->data->name.GetString()) == NULL)
-			saving.append_child(item->data->name.GetString());
+			saving.child(item->data->name.GetString());
 		item = item->next;
 	}
 	

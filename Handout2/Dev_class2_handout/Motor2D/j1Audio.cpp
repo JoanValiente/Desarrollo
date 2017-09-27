@@ -50,6 +50,7 @@ bool j1Audio::Awake(pugi::xml_node& config)
 		active = false;
 		ret = true;
 	}
+	Mix_VolumeMusic(volume);
 
 	return ret;
 }
@@ -78,6 +79,22 @@ bool j1Audio::CleanUp()
 	SDL_QuitSubSystem(SDL_INIT_AUDIO);
 
 	return true;
+}
+
+void j1Audio::RealSave(pugi::xml_node& savedoc) const {
+
+	if (savedoc.child("volume") == NULL) {
+		savedoc.append_child("volume").append_attribute("value") = volume;
+	}
+	else {
+		savedoc.child("volume").attribute("value").set_value(volume);
+	}
+}
+
+void j1Audio::RealLoad(pugi::xml_node& savedoc) {
+
+	Mix_VolumeMusic(savedoc.child("volume").attribute("value").as_int());
+
 }
 
 // Play a music file

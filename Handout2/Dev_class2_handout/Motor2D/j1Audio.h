@@ -32,8 +32,11 @@ public:
 	// Play a previously loaded WAV
 	bool PlayFx(unsigned int fx, int repeat = 0);
 
-private:
+	void RealSave(pugi::xml_node& savedoc) const;
+	void RealLoad(pugi::xml_node&);
 
+private:
+	int volume = 50;
 	_Mix_Music*			music;
 	p2List<Mix_Chunk*>	fx;
 };

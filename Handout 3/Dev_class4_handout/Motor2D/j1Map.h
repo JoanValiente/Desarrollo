@@ -10,7 +10,7 @@
 // Ignore Terrain Types and Tile Types for now, but we want the image!
 struct TileSetInfo {	
 	unsigned int firstgid = 0;
-	char* name = nullptr;
+	p2SString name = nullptr;
 	unsigned int tilewidth = 0;
 	unsigned int tileheight = 0;
 	unsigned int spacing = 0;
@@ -32,10 +32,19 @@ enum renderorder {
 	left_down,
 	left_up
 };
-struct MapInfo {
+struct mapInfo {
 	orientation mapOrientation = orthogonal;
 	renderorder mapRenderorder = right_down;
 	unsigned int width = 0, height = 0, tilewidth = 0, tileheight = 0, nextobject = 0;
+};
+
+// ----------------------------------------------------
+
+struct layerInfo
+{
+	p2SString name = nullptr;
+	int width = 0, height = 0;
+	p2List<int> gid;
 };
 
 // ----------------------------------------------------
@@ -62,12 +71,18 @@ public:
 
 private:
 
-	void LoadMap();
+	void LoadMap(pugi::xml_node&);
+	void LoadTileset();
+	void LoadLayer();
+	p2List<TileSetInfo> tileList;
 
 public:
 
 	// TODO 1: Add your struct for map info as public for now
-	MapInfo mapInformation;
+	mapInfo MapInfo;
+	TileSetInfo tilesetInfo;
+	int tilesetcount = 0;
+	layerInfo LayerInfo;
 
 private:
 

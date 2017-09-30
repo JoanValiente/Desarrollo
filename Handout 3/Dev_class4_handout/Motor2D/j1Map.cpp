@@ -36,10 +36,10 @@ void j1Map::Draw()
 
 	for (int i = 0; i < tileList.count(); i++)
 	{
-		SDL_Texture* map = App->tex->Load(tilesetInfo.name.GetString());
+		map = App->tex->Load(tilesetInfo.name.GetString());
 		App->render->Blit(map, 0, 0);
 	}
-
+	App->tex->UnLoad(map);
 }
 
 // Called before quitting

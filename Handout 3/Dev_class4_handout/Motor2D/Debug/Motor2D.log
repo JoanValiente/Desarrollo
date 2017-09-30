@@ -1,3 +1,10 @@
-﻿  j1Scene.cpp
-  Motor2D.vcxproj -> C:\Users\joanvil\Documents\GitHub\Dev-classes\Handout 3\Dev_class4_handout\Debug\Motor 2D.exe
-  Motor2D.vcxproj -> C:\Users\joanvil\Documents\GitHub\Dev-classes\Handout 3\Dev_class4_handout\Debug\Motor 2D.pdb (Partial PDB)
+﻿  j1Map.cpp
+c:\users\joanv\documents\github\dev-classes\handout 3\dev_class4_handout\motor2d\j1map.cpp(37): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...
+  Compilando...
+  j1App.cpp
+  Generando código...
+  Omitiendo... (no se detectaron cambios relevantes)
+  j1Scene.cpp
+  Motor2D.vcxproj -> C:\Users\joanv\Documents\GitHub\Dev-classes\Handout 3\Dev_class4_handout\Debug\Motor 2D.exe
+  Motor2D.vcxproj -> C:\Users\joanv\Documents\GitHub\Dev-classes\Handout 3\Dev_class4_handout\Debug\Motor 2D.pdb (Partial PDB)

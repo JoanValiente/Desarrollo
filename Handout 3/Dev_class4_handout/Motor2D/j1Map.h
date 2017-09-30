@@ -89,6 +89,7 @@ private:
 	pugi::xml_document	map_file;
 	p2SString			folder;
 	bool				map_loaded;
+	SDL_Texture* map;
 };
 
 #endif // __j1MAP_H__

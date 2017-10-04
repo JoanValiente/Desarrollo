@@ -30,9 +30,33 @@ void j1Map::Draw()
 {
 	if(map_loaded == false)
 		return;
+	p2List_item<MapLayer*>* item_layer = data.layers.start;
+	p2List_item<TileSet*>* item_tileset = data.tilesets.start;
 
 	// TODO 5: Prepare the loop to draw all tilesets + Blit
+	for (int x = 0; item_layer->data->width > x; x++) 
+	{
+		for(int y = 0; item_layer->data->height > y; y++)
+		{
+			int tileid = 0;
 
+			if (x > item_layer->data->width || y > item_layer->data->height) 
+			{
+				tileid = 0;
+			}
+			else
+			{
+				tileid = item_layer->data->Get(x, y);
+			}
+			if (tileid > 0) {
+				iPoint pos = MapToWorld(x, y);
+				SDL_Rect rect = item_tileset->data->GetTileRect(tileid);
+
+				App->render->Blit(item_tileset->data->texture, pos.x, pos.y, &rect);
+			}
+		}
+
+	}
 		// TODO 9: Complete the draw function
 
 }
@@ -315,7 +339,6 @@ bool j1Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
 bool j1Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
 {
 	bool ret = true;
-	//for (pugi::xml_node layerset = node.child("map").child("layer"); layerset; layerset = layerset.next_sibling("layer"))
 
 	if (node == NULL) {
 		LOG("Error loading layer");

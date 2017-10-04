@@ -18,6 +18,16 @@ struct MapLayer
 	{
 		gid.clear();
 	}
+
+	inline uint Get(int x, int y) const {
+		if (x < 0 || y < 0 || (y*width + x) >  gid.count()) {
+			return 0;
+		}
+		else
+		{
+			return gid[(y*width + x)];
+		}
+	}
 };
 
 	// TODO 6: Short function to get the value of x,y

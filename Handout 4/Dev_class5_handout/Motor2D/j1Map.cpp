@@ -66,8 +66,33 @@ iPoint j1Map::MapToWorld(int x, int y) const
 {
 	iPoint ret;
 
-	ret.x = x * data.tile_width;
-	ret.y = y * data.tile_height;
+	if (data.type == MAPTYPE_ORTHOGONAL) {
+		ret.x = x * data.tile_width;
+		ret.y = y * data.tile_height;
+	}
+
+	if (data.type == MAPTYPE_ISOMETRIC) {
+		ret.x = (x - y)* data.tile_width / 2;
+		ret.y = (x + y)* data.tile_height / 2;
+	}
+
+
+	return ret;
+}
+
+iPoint j1Map::WorldToMap(int x, int y) const
+{
+	iPoint ret;
+
+	if (data.type == MAPTYPE_ORTHOGONAL) {
+		ret.x = x / data.tile_width;
+		ret.y = y / data.tile_height;
+	}
+
+	if (data.type == MAPTYPE_ISOMETRIC) {
+		ret.x = (x/data.tile_width) + (y / data.tile_height);
+		ret.y = (y / data.tile_height) - (x / data.tile_width);
+	}
 
 	return ret;
 }
@@ -159,8 +184,7 @@ bool j1Map::Load(const char* file_name)
 
 	// TODO 4: Iterate all layers and load each of them
 	// Load layer info ----------------------------------------------
-	pugi::xml_node layerset;
-	for (layerset = map_file.child("map").child("layer"); layerset; layerset = layerset.next_sibling("layer")) 
+	for (pugi::xml_node layerset = map_file.child("map").child("layer"); layerset && ret; layerset = layerset.next_sibling("layer"))
 	{
 		MapLayer* layer = new MapLayer();
 

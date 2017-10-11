@@ -34,6 +34,7 @@ public:
 
 private:
 	p2SString mapname;
+	iPoint mouse;
 };
 
 #endif // __j1SCENE_H__

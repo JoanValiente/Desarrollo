@@ -31,7 +31,7 @@ bool j1Scene::Awake(pugi::xml_node& config)
 // Called before the first frame
 bool j1Scene::Start()
 {
-	App->map->Load(mapname.GetString());
+	App->map->Load("isometric_grass_and_water.tmx");
 	return true;
 }
 
@@ -67,10 +67,12 @@ bool j1Scene::Update(float dt)
 
 	// TODO 7: Set the window title like
 	// "Map:%dx%d Tiles:%dx%d Tilesets:%d"
-	p2SString title("Map:%dx%d Tiles:%dx%d Tilesets:%d",
-					App->map->data.width, App->map->data.height,
-					App->map->data.tile_width, App->map->data.tile_height,
-					App->map->data.tilesets.count());
+	App->input->GetMousePosition(mouse.x, mouse.y);
+	p2SString title("Map:%dx%d Tiles:%dx%d Tilesets:%d TILES: %d, %d",
+		App->map->data.width, App->map->data.height,
+		App->map->data.tile_width, App->map->data.tile_height,
+		App->map->data.tilesets.count(),
+		mouse.x, mouse.y);
 
 	App->win->SetTitle(title.GetString());
 	return true;

@@ -1,18 +1,7 @@
-﻿  j1Window.cpp
-  j1Textures.cpp
-  j1Render.cpp
-  j1Scene.cpp
-  j1Map.cpp
-c:\users\joanvil\documents\github\dev-classes\handout 4\dev_class5_handout\motor2d\j1map.cpp(37): warning C4018: '>': signed/unsigned mismatch
-c:\users\joanvil\documents\github\dev-classes\handout 4\dev_class5_handout\motor2d\j1map.cpp(39): warning C4018: '>': signed/unsigned mismatch
-c:\users\joanvil\documents\github\dev-classes\handout 4\dev_class5_handout\motor2d\j1map.cpp(43): warning C4018: '>': signed/unsigned mismatch
-  j1Input.cpp
-  j1Audio.cpp
-  j1App.cpp
-  j1Main.cpp
+﻿  j1Scene.cpp
   Generating Code...
   Skipping... (no relevant changes detected)
-  pugixml.cpp
   p2Log.cpp
+  pugixml.cpp
   Motor2D.vcxproj -> C:\Users\joanvil\Documents\GitHub\Dev-classes\Handout 4\Dev_class5_handout\Debug\Motor 2D.exe
   Motor2D.vcxproj -> C:\Users\joanvil\Documents\GitHub\Dev-classes\Handout 4\Dev_class5_handout\Debug\Motor 2D.pdb (Partial PDB)

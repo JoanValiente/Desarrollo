@@ -1,0 +1,17 @@
+﻿  pugixml.cpp
+  j1Window.cpp
+  j1Textures.cpp
+  j1Render.cpp
+  p2Log.cpp
+  j1Scene.cpp
+  j1Map.cpp
+c:\users\joanv\desktop\development-code-master\dev_class7.5_handout\motor2d\j1map.cpp(205): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\joanv\desktop\development-code-master\dev_class7.5_handout\motor2d\j1map.cpp(206): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  j1Input.cpp
+  j1Audio.cpp
+  j1App.cpp
+  j1Main.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\joanv\Desktop\Development-code-master\Dev_class7.5_handout\Debug\Dev Class7.5 Handout.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  Motor2D.vcxproj -> C:\Users\joanv\Desktop\Development-code-master\Dev_class7.5_handout\Debug\Dev Class7.5 Handout.exe
+  Motor2D.vcxproj -> C:\Users\joanv\Desktop\Development-code-master\Dev_class7.5_handout\Debug\Dev Class7.5 Handout.pdb (Partial PDB)
